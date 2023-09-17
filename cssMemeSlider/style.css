@@ -53,6 +53,25 @@ img {
 	transform: scale(1);
 }
 
+.wrapper, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+	background: #ddd;
+}
+
+#slide1:checked ~ .text-container > #text1,
+#slide2:checked ~ .text-container > #text2,
+#slide3:checked ~ .text-container > #text3,
+#slide4:checked ~ .text-container > #text4,
+#slide5:checked ~ .text-container > #text5 {
+	display: inline-block;
+	z-index: 1;
+	transform: scale(1);
+}
+
 .wrapper > input {
 	display: none;
 }
@@ -72,25 +91,6 @@ img {
 	width: .41vw;
 	border-radius: 50%;
 	transition: background ease-in-out .5s;
-}
-
-.wrapper, 
-#slide1:checked ~ .controls label:nth-of-type(1),
-#slide2:checked ~ .controls label:nth-of-type(2),
-#slide3:checked ~ .controls label:nth-of-type(3),
-#slide4:checked ~ .controls label:nth-of-type(4),
-#slide5:checked ~ .controls label:nth-of-type(5) {
-	background: #ddd;
-}
-
-#slide1:checked ~ .text-container > #text1,
-#slide2:checked ~ .text-container > #text2,
-#slide3:checked ~ .text-container > #text3,
-#slide4:checked ~ .text-container > #text4,
-#slide5:checked ~ .text-container > #text5 {
-	display: inline-block;
-	z-index: 1;
-	transform: scale(1);
 }
 
 .text-container {
