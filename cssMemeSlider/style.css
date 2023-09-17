@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(assets/bg.png);
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  width: 75vw;
+	height: 33vw;
+	margin: 5vw auto;
+	position: relative;
+}
+
+.wrapper label:hover {
+  background: blue;
+}
+
+.slider {
+  width: inherit;
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+}
+
+.slides {
+  width: inherit;
+	height: inherit;
+  position: absolute;
+	opacity: 0;
+	z-index: 0;
+	transform: scale(1.5);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+	opacity: 1;
+	z-index: 1;
+	transform: scale(1);
+}
+
+.wrapper, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+	background: #ddd;
+}
+
+#slide1:checked ~ .text-container > #text1,
+#slide2:checked ~ .text-container > #text2,
+#slide3:checked ~ .text-container > #text3,
+#slide4:checked ~ .text-container > #text4,
+#slide5:checked ~ .text-container > #text5 {
+	display: inline-block;
+	z-index: 1;
+	transform: scale(1);
+}
+
+.wrapper > input {
+	display: none;
+}
+
+.wrapper .controls {
+	left: 50%;
+  margin-left: 27vw;
+	position: absolute;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: .41vw;
+	margin: 1.3vw 0.62vw 0 0.83vw;
+	position: relative;
+	width: .41vw;
+	border-radius: 50%;
+	transition: background ease-in-out .5s;
+}
+
+.text-container {
+  margin-top: .78vw;
+  display: inline-block;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  color: white;
+}
+
+#text1,
+#text2,
+#text3,
+#text4,
+#text5 {
+  display: none;
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+.wrapper label:after {
+	border: 2px solid #ddd;
+	content: " ";
+	display: block;
+	height: 0.62vw;
+	left: -0.2vw;
+	position: absolute;
+	top: -0.2vw;
+	width: 0.62vw;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 200%;
+    width: 200%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
