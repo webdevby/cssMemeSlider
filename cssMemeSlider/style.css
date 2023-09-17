@@ -7,7 +7,12 @@
 }
 
 body {
-	background-image: url(./assets/bg.png);
+	background-image: url(assets/bg.png);
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .wrapper {
@@ -17,12 +22,15 @@ body {
 	position: relative;
 }
 
+.wrapper label:hover {
+  background: blue;
+}
+
 .slider {
   width: inherit;
 	height: inherit;
 	overflow: hidden;
 	position: relative;
-	/* box-shadow: 0 0 20px rgba(0, 0, 0, .5); */
 }
 
 .slides {
@@ -35,15 +43,6 @@ body {
 	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
 }
 
-.wrapper label:hover {
-  background: blue;
-}
-
-img {
-  width: 100%;
-  object-fit: cover;
-}
-
 #slide1:checked ~ .slider > .slide1,
 #slide2:checked ~ .slider > .slide2,
 #slide3:checked ~ .slider > .slide3,
@@ -51,9 +50,6 @@ img {
 #slide5:checked ~ .slider > .slide5 {
 	opacity: 1;
 	z-index: 1;
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-o-transform: scale(1);
 	transform: scale(1);
 }
 
@@ -64,7 +60,7 @@ img {
 .wrapper .controls {
 	left: 50%;
 	/* margin-left: -98px; */
-  margin-left: 120px;
+  margin-left: 520px;
 	position: absolute;
 }
 
@@ -75,13 +71,7 @@ img {
 	margin: 25px 12px 0 16px;
 	position: relative;
 	width: 8px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-radius: 50%;
 	border-radius: 50%;
-	-webkit-transition: background ease-in-out .5s;
-	-moz-transition: background ease-in-out .5s;
-	-o-transition: background ease-in-out .5s;
 	transition: background ease-in-out .5s;
 }
 
@@ -92,6 +82,38 @@ img {
 #slide4:checked ~ .controls label:nth-of-type(4),
 #slide5:checked ~ .controls label:nth-of-type(5) {
 	background: #ddd;
+}
+
+#slide1:checked ~ .text-container > #text1,
+#slide2:checked ~ .text-container > #text2,
+#slide3:checked ~ .text-container > #text3,
+#slide4:checked ~ .text-container > #text4,
+#slide5:checked ~ .text-container > #text5 {
+	display: inline-block;
+	z-index: 1;
+	transform: scale(1);
+}
+
+.text-container {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+}
+
+#text1,
+#text2,
+#text3,
+#text4,
+#text5 {
+  display: none;
+  animation-duration: 1s;
+  animation-name: slidein;
 }
 
 .wrapper label:after {
@@ -107,4 +129,16 @@ img {
 	-moz-border-radius: 50%;
 	-o-border-radius: 50%;
 	border-radius: 50%;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 200%;
+    width: 200%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
