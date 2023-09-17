@@ -59,18 +59,17 @@ img {
 
 .wrapper .controls {
 	left: 50%;
-	/* margin-left: -98px; */
-  margin-left: 520px;
+  margin-left: 27vw;
 	position: absolute;
 }
 
 .wrapper label {
 	cursor: pointer;
 	display: inline-block;
-	height: 8px;
-	margin: 25px 12px 0 16px;
+	height: .41vw;
+	margin: 1.3vw 0.62vw 0 0.83vw;
 	position: relative;
-	width: 8px;
+	width: .41vw;
 	border-radius: 50%;
 	transition: background ease-in-out .5s;
 }
@@ -95,13 +94,13 @@ img {
 }
 
 .text-container {
-  margin-top: 15px;
+  margin-top: .78vw;
   display: inline-block;
 }
 
 .text {
   font-family: 'Roboto', sans-serif;
-  font-size: 25px;
+  font-size: 1.3vw;
   font-weight: 400;
   color: white;
 }
@@ -120,11 +119,11 @@ img {
 	border: 2px solid #ddd;
 	content: " ";
 	display: block;
-	height: 12px;
-	left: -4px;
+	height: 0.62vw;
+	left: -0.2vw;
 	position: absolute;
-	top: -4px;
-	width: 12px;
+	top: -0.2vw;
+	width: 0.62vw;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	-o-border-radius: 50%;
